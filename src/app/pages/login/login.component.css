@@ -1,0 +1,46 @@
+.login-component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url("src/assets/login-bg.jpg");
+    background-size: cover;
+}
+
+.login-container {
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.575);
+    width: 500px;
+    height: 45%;
+}
+
+.login-logo,
+.login-user,
+.login-pass {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 30px 0;
+}
+
+.logo-image {
+    width: 70%;
+    height: 40px;
+}
+
+.login-logo {
+    height: 40px;
+}
+
+.login-username,
+.login-password {
+    height: 43px;
+    width: 100%;
+    border-radius: 7px 7px;
+    background-color: rgba(0, 0, 0, 0.585);
+    color: white;
+}
+
+#login-button {
+    margin: 10px;
+}

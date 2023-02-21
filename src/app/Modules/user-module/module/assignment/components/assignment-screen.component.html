@@ -1,0 +1,184 @@
+<div class="exam-screen">
+    <app-logo-nav></app-logo-nav>
+    <app-main-nav></app-main-nav>
+    <div class="main-batch">
+        <div class="outer-line">
+            <h4><strong>select the options below to get results</strong></h4>
+            <div class="values">
+                <div class="select">
+                    <input placeholder="Batch" (click)="openDropdown()" value="{{ this.selectedValueDropName }}" class="batch-input-class" />
+                    <mat-icon class="choose-dropdown" fontIcon="arrow_drop_down" (click)="openDropdown()"></mat-icon>
+                    <div class="dropdown mostly-customized-scrollbar" *ngIf="dropdown">
+                        <div class="dropdown-header">
+                            <input placeholder="search" />
+                            <mat-icon class="dropdown-close" fontIcon="close" (click)="closeDropdown()"></mat-icon>
+                        </div>
+                        <div class="dropdown-items">
+                            <div class="dropdown-item" *ngFor="let batch of batches; let i">
+                                <div (click)="selectOption(i)">
+                                    {{ batch.name }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="batch-start">
+                    <input type="text" readonly value="{{ this.selectedValueDropDate }}" class="Batch-date" [disabled]="true" />
+                </div>
+                <div class="program-select">
+                    <input placeholder="Program" (click)="openProgramDropdown()" value="{{ this.selectedValueProgramDropname }}" class="program-input-class" [disabled]="status" />
+                    <mat-icon class="program-dropdown" fontIcon="arrow_drop_down" (click)="openProgramDropdown()" *ngIf="!status"></mat-icon>
+                    <div class="programs-dropdown" *ngIf="programDropdown">
+                        <div class="dropdown-header">
+                            <input placeholder="search" class="program-search" />
+                            <mat-icon class="dropdown-close" fontIcon="close" (click)="closeProgramDropdown()"></mat-icon>
+                        </div>
+                        <div class="dropdown-items">
+                            <div class="dropdown-item" *ngFor="let program of programs; let i">
+                                <div (click)="selectProgramOption(i)">
+                                    {{ program.name }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-select">
+                    <input placeholder="Course Code" (click)="openCodeDropdown()" value="{{ this.selectedValueCodeDropName }}" class="program-input-class" [disabled]="codeStatus" />
+                    <mat-icon class="code-dropdown" fontIcon="arrow_drop_down" (click)="openCodeDropdown()" *ngIf="!codeStatus"></mat-icon>
+                    <div class="codes-dropdown" *ngIf="codeDropdown">
+                        <div class="dropdown-header">
+                            <input placeholder="search" class="program-search" />
+                            <mat-icon class="dropdown-close" fontIcon="close" (click)="closeCodeDropdown()"></mat-icon>
+                        </div>
+                        <div class="dropdown-items">
+                            <div class="dropdown-item" *ngFor="let topics of codes; let j">
+                                <div (click)="selectCodeOption(j)">
+                                    {{ topics.code }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white border" *ngIf="this.exams">
+            <div class="d-flex justify-content-end my-3 mx-3">
+                <button class="btn btn-outline-secondary">Create Assignment</button>
+            </div>
+            <!-- Actions Table -->
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">Actions</th>
+                        <th scope="col">
+                            Name
+                            <mat-icon> unfold_more </mat-icon>
+                        </th>
+                        <th scope="col">Total Marks</th>
+                        <th scope="col">
+                            Date
+                            <mat-icon> unfold_more </mat-icon>
+                        </th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Files</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <mat-icon>edit</mat-icon>
+                            <mat-icon>delete</mat-icon>
+                        </td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>@mdo</td>
+                        <td data-toggle="modal" data-target="#exampleModalCenter">
+                            <mat-icon class="upload">upload</mat-icon>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-icon>edit</mat-icon>
+                            <mat-icon>delete</mat-icon>
+                        </td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>Jacob</td>
+                        <td>@fat</td>
+                        <td data-toggle="modal" data-target="#exampleModalCenter">
+                            <mat-icon class="upload">upload</mat-icon>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-icon>edit</mat-icon>
+                            <mat-icon>delete</mat-icon>
+                        </td>
+                        <td>Thornton</td>
+                        <td>@twitter</td>
+                        <td>Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td data-toggle="modal" data-target="#exampleModalCenter">
+                            <mat-icon class="upload">upload</mat-icon>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-icon>edit</mat-icon>
+                            <mat-icon>delete</mat-icon>
+                        </td>
+                        <td>Thornton</td>
+                        <td>@twitter</td>
+                        <td>Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td data-toggle="modal" data-target="#exampleModalCenter">
+                            <mat-icon class="upload">upload</mat-icon>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-icon>done</mat-icon>
+                            <mat-icon>close</mat-icon>| <a href="#">mark Students</a>
+                        </td>
+                        <td><input type="text" placeholder="Enter Assignment-Name"></td>
+                        <td><input type="text" placeholder="Enter Marks"></td>
+                        <td><input type="date" class="form-control date-picker"></td>
+                        <td><input type="text" placeholder="03:00 PM"></td>
+                        <td data-toggle="modal" data-target="#exampleModalCenter">
+                            <mat-icon class="upload">upload</mat-icon>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Upload Files</h5>
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="upload-container">
+                            <input type="file" name="file" id="file" class="d-none" />
+                            <label class="upload-btn" for="file">Upload</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Upload
+            </button>
+                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
+              Cancel
+            </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

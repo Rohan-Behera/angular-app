@@ -1,0 +1,172 @@
+.main-batch {
+    height: auto;
+    padding: 20px;
+    margin: 25px 30px 100px;
+    background-color: white;
+}
+
+.topic {
+    display: flex;
+    height: 50px;
+}
+
+.topic1,
+.topic2 {
+    cursor: pointer;
+    margin: 10px 0px 0px 30px;
+}
+
+.topic1 {
+    border-bottom: 3px solid blue;
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+.topic2 {
+    color: rgba(0, 0, 0, 0.484);
+}
+
+hr {
+    margin-top: 0px;
+}
+
+.outer-line {
+    background-color: #f2f9ff;
+}
+
+h4 {
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.values {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+}
+
+.select,
+.program-select {
+    height: 60px;
+    position: relative;
+}
+
+.menu {
+    background-color: #f2f9ff;
+}
+
+.batch-start {
+    margin: 0px 10px 35px 10px;
+}
+
+.Batch-date {
+    color: rgba(0, 0, 0, 0.505);
+}
+
+.batch-input-class,
+.dropdown {
+    width: 200px;
+    margin-left: 30px;
+}
+
+.program-input-class,
+.programs-dropdown {
+    width: 300px;
+}
+
+.program-search {
+    width: 100%;
+}
+
+.select>input,
+.program-select>input {
+    cursor: pointer;
+}
+
+.choose-dropdown,
+.program-dropdown {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.dropdown-items {
+    height: 80px;
+    overflow-y: auto;
+}
+
+.dropdown,
+.programs-dropdown {
+    margin: 0px 0 0 0;
+    position: absolute;
+    top: 20;
+    right: 0;
+    background-color: white;
+}
+
+.dropdown-header {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item:hover {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown-close {
+    cursor: pointer;
+}
+
+.batch-start {
+    display: flex;
+}
+
+.main-heading {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 15px 0px 0px 0px;
+}
+
+.ItemsCode {
+    flex: 0.1;
+}
+
+.ItemsCourseName {
+    flex: 0.2;
+}
+
+.ItemsTopics {
+    flex: 0.3;
+}
+
+.ItemsProgress {
+    flex: 0.2;
+}
+
+.ItemsPercentage {
+    flex: 0.2;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.ItemCode,
+.ItemCourse,
+.ItemPercentage,
+.ItemProgress,
+.ItemTopics {
+    margin: 0px 0px 20px 0px;
+    margin-left: 20px;
+}
+
+.code-class,
+.course-class {
+    display: flex;
+}

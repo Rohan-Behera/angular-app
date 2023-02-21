@@ -1,0 +1,18 @@
+<div class="outer">
+    <div class="logo-container">
+        <img src="assets/logo.png" alt="logo" class="logo-image">
+    </div>
+    <div class="login-info">
+        <ngx-avatars name="Haithem Mosbahi" src="https://media.istockphoto.com/id/1344688156/photo/portrait-of-a-man-using-a-computer-in-a-modern-office.jpg?b=1&s=170667a&w=0&k=20&c=AAVVOvN9uY1Rd_0QsWb8WvBN-4VSUdCORiZx51s5OLc=" size="40" [round]="true">
+        </ngx-avatars>
+        <div class="user">
+            <p class="login-name" (click)="openDropdown()">Rohan Kumar Behera</p>
+            <mat-icon class="choose-dropdown" fontIcon="arrow_drop_down" (click)="openDropdown()"></mat-icon>
+            <div class="dropdown" *ngIf="dropdown" routerLink="/login">
+                <mat-icon class="Switch-off">power_settings_new</mat-icon>
+                <span class="signout-text">Sign out</span>
+            </div>
+        </div>
+
+    </div>
+</div>

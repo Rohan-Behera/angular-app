@@ -1,0 +1,135 @@
+<div class="home-screen">
+    <app-logo-nav></app-logo-nav>
+    <app-main-nav></app-main-nav>
+    <div class="name">Home</div>
+    <div class="main-batch">
+        <div class="topic">
+            <h3 class="topic1" (click)="openBatches()" routerLink="/home-screen">
+                Batches & Programs
+            </h3>
+            <h3 class="topic2">Attendance</h3>
+        </div>
+        <hr />
+        <div class="outer-line">
+            <h4><strong>select the options below to get results</strong></h4>
+            <div class="values">
+                <div class="select">
+                    <input placeholder="Batch" (click)="openDropdown()" value="{{ this.selectedValueDropName }}" class="batch-input-class" />
+                    <mat-icon class="choose-dropdown" fontIcon="arrow_drop_down" (click)="openDropdown()"></mat-icon>
+                    <div class="dropdown mostly-customized-scrollbar" *ngIf="dropdown">
+                        <div class="dropdown-header">
+                            <input placeholder="search" />
+                            <mat-icon class="dropdown-close" fontIcon="close" (click)="closeDropdown()"></mat-icon>
+                        </div>
+                        <div class="dropdown-items">
+                            <div class="dropdown-item" *ngFor="let batch of batches; let i">
+                                <div (click)="selectOption(i)">
+                                    {{ batch.name }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="batch-start">
+                    <input type="text" readonly value="{{ this.selectedValueDropDate }}" class="Batch-date" [disabled]="true" />
+                </div>
+                <div class="program-select">
+                    <input placeholder="Program" (click)="openProgramDropdown()" value="{{ this.selectedValueProgramDropname }}" class="program-input-class" [disabled]="status" />
+                    <mat-icon class="program-dropdown" fontIcon="arrow_drop_down" (click)="openProgramDropdown()" *ngIf="!status"></mat-icon>
+                    <div class="programs-dropdown" *ngIf="programDropdown">
+                        <div class="dropdown-header">
+                            <input placeholder="search" class="program-search" />
+                            <mat-icon class="dropdown-close" fontIcon="close" (click)="closeProgramDropdown()"></mat-icon>
+                        </div>
+                        <div class="dropdown-items">
+                            <div class="dropdown-item" *ngFor="let program of programs; let i">
+                                <div (click)="selectProgramOption(i)">
+                                    {{ program.name }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-select">
+                    <input placeholder="Course Code" (click)="openCodeDropdown()" value="{{ this.selectedValueCodeDropName }}" class="program-input-class" [disabled]="codeStatus" />
+                    <mat-icon class="code-dropdown" fontIcon="arrow_drop_down" (click)="openCodeDropdown()" *ngIf="!codeStatus"></mat-icon>
+                    <div class="codes-dropdown" *ngIf="codeDropdown">
+                        <div class="dropdown-header">
+                            <input placeholder="search" class="program-search" />
+                            <mat-icon class="dropdown-close" fontIcon="close" (click)="closeCodeDropdown()"></mat-icon>
+                        </div>
+                        <div class="dropdown-items">
+                            <div class="dropdown-item" *ngFor="let topics of codes; let j">
+                                <div (click)="selectCodeOption(j)">
+                                    {{ topics.code }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between my-3">
+            <input [(ngModel)]="dateValue" type="date" class="form-control date-picker" [disabled]="dateStatus" />
+            <button class="btn btn-outline-secondary" [disabled]="this.dateValue == ''" (click)="openTable()">Add Topic</button>
+        </div>
+
+        <div class="topics-container" *ngIf="this.table">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">Actions</th>
+                        <th scope="col">Topic Name</th>
+                        <th scope="col">Topic percentage completed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="action-icons">
+                            <mat-icon (click)="addRow()">done</mat-icon>
+                            <mat-icon>close</mat-icon>
+                        </td>
+                        <td>
+                            <div class="Topic-select">
+                                <input placeholder="Select Topic" (click)="openTopicDropdown()" value="{{ this.selectedValueTopicDropName }}" class="Topic-input-class" />
+                                <!-- <mat-icon class="Topic-dropdown" fontIcon="arrow_drop_down" (click)="openTopicDropdown()"></mat-icon> -->
+                                <div class="Topics-dropdown" *ngIf="topicDropdown">
+                                    <div class="dropdown-Topic">
+                                        <input placeholder="search" class="Topic-search" />
+                                        <mat-icon class="Topic-close" fontIcon="close" (click)="closeTopicDropdown()"></mat-icon>
+                                    </div>
+                                    <div class="Topic-items">
+                                        <div class="Topic-item" *ngFor="let chap of chaps; let i">
+                                            <div (click)="selectTopicOption(i)">
+                                                {{ chap.name }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><input type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="attendance-container">
+            <div class="py-2 px-3 d-flex gap-5 mt-3 attendance-header">
+                <span>Students</span>
+                <span>Attendance</span>
+            </div>
+            <div class="d-flex gap-5 mt-1 py-2 px-3">
+                <label for="all-students">All Students</label>
+                <input type="checkbox" class="form-check-input" name="all-students" id="all-students">
+            </div>
+            <div class="d-flex gap-5 mt-1 py-2 px-3">
+                <label for="mohit-singh">Mohit Singh</label>
+                <input type="checkbox" class="form-check-input" name="mohit-singh" id="all-students">
+            </div>
+        </div>
+    </div>
+</div>

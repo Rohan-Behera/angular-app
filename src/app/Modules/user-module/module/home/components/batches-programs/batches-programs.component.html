@@ -1,0 +1,89 @@
+<div class="main-batch">
+    <div class="topic">
+        <h3 class="topic1">Batches & Programs</h3>
+        <h3 class="topic2" (click)="openAttendance()" routerLink="/Attendance">Attendance</h3>
+    </div>
+    <hr>
+    <div class="outer-line">
+        <h4>select the options below to get results</h4>
+        <div class="values">
+            <div class="select">
+                <input placeholder="Batch" (click)="openDropdown()" value="{{this.selectedValueDropName}}" class="batch-input-class" />
+                <mat-icon class="choose-dropdown" fontIcon="arrow_drop_down" (click)="openDropdown()"></mat-icon>
+                <div class="dropdown" *ngIf="dropdown">
+                    <div class="dropdown-header">
+                        <input placeholder="search" />
+                        <mat-icon class="dropdown-close" fontIcon="close" (click)="closeDropdown()"></mat-icon>
+                    </div>
+                    <div class="dropdown-items">
+                        <div class="dropdown-item" *ngFor="let batch of batches; let i in index">
+                            <div (click)="selectOption(i)">
+                                {{batch.name}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="batch-start">
+                <input type="text" readonly value="{{this.selectedValueDropDate}}" class="Batch-date" [disabled]="true" />
+            </div>
+            <div class="program-select">
+                <input placeholder="Program" (click)="openProgramDropdown()" value="{{this.selectedValueProgramDropname}}" class="program-input-class" [disabled]="status" />
+                <mat-icon class="program-dropdown" fontIcon="arrow_drop_down" (click)="openProgramDropdown()" *ngIf="!status"></mat-icon>
+                <div class="programs-dropdown" *ngIf="programDropdown">
+                    <div class="dropdown-header">
+                        <input placeholder="search" class="program-search" />
+                        <mat-icon class="dropdown-close" fontIcon="close" (click)="closeProgramDropdown()"></mat-icon>
+                    </div>
+                    <div class="dropdown-items">
+                        <div class="dropdown-item" *ngFor="let program of programs; let i in index">
+                            <div (click)="selectProgramOption(i)">
+                                {{program.name}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu" *ngIf="this.topicMain">
+        <div class="main-heading">
+            <div class="ItemsCode">
+                <div class="code-class">
+                    <h4>Code</h4>
+                    <mat-icon>unfold_more</mat-icon>
+                </div>
+                <div class="ItemCode" *ngFor="let item of course">
+                    {{item.code}}
+                </div>
+            </div>
+            <div class="ItemsCourseName">
+                <div class="course-class">
+                    <h4>Course Name</h4>
+                    <mat-icon>unfold_more</mat-icon>
+                </div>
+                <div class="ItemCourse" *ngFor="let item of course">
+                    {{item.courseName}}
+                </div>
+            </div>
+            <div class="ItemsTopics">
+                <h4>Topics Completed</h4>
+                <div class="ItemTopics" *ngFor="let chap of topics">
+                    {{chap.topicsCompleted}}
+                </div>
+            </div>
+            <div class="ItemsProgress">
+                <h4>Topics in Progress</h4>
+                <div class="ItemProgress" *ngFor="let item of course">
+                    {{item.topicProgress}}
+                </div>
+            </div>
+            <div class="ItemsPercentage">
+                <h4>Course Completion Percentage</h4>
+                <div class="ItemPercentage" *ngFor="let item of course">
+                    {{item.courseCompletion}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

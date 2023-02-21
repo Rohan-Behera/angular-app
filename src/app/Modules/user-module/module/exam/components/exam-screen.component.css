@@ -1,0 +1,194 @@
+.exam-screen {
+    background-color: #f1f5ff;
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* .home-screen {
+    background-color: #f1f5ff;
+    width: 100%;
+    height: 100vh;
+} */
+
+.name {
+    margin: 30px 10px 20px 20px;
+}
+
+.main-card,
+.main-tab {
+    margin: 25px 30px 100px;
+    background-color: white;
+}
+
+.main-batch {
+    height: auto;
+    padding: 20px;
+    margin: 25px 30px 100px;
+    background-color: white;
+}
+
+.topic {
+    display: flex;
+    height: 50px;
+}
+
+.topic1,
+.topic2 {
+    cursor: pointer;
+    margin: 10px 0px 0px 30px;
+}
+
+.topic2 {
+    border-bottom: 3px solid blue;
+    margin-left: 80px;
+    font-weight: bold;
+}
+
+.topic1 {
+    color: rgba(0, 0, 0, 0.484);
+}
+
+hr {
+    margin-top: 0px;
+}
+
+.outer-line {
+    background-color: #f2f9ff;
+    /* height: 100vh; */
+}
+
+h4 {
+    margin-left: 20px;
+}
+
+.values {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.select,
+.program-select,
+.code-select {
+    height: 60px;
+    position: relative;
+}
+
+.menu {
+    background-color: #f2f9ff;
+}
+
+.batch-start {
+    margin: 0px 10px 35px 10px;
+}
+
+.Batch-date {
+    color: rgba(0, 0, 0, 0.505);
+}
+
+.batch-input-class,
+.dropdown {
+    width: 200px;
+    margin-left: 30px;
+}
+
+.program-input-class,
+.programs-dropdown,
+.codes-dropdown {
+    width: 300px;
+}
+
+.program-search {
+    width: 100%;
+}
+
+.select>input,
+.program-select>input,
+.code-select>input {
+    cursor: pointer;
+}
+
+.program-select {
+    margin: 0px 10px 0px 0px;
+}
+
+.choose-dropdown,
+.program-dropdown,
+.code-dropdown {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.dropdown-items {
+    height: 80px;
+    overflow-y: auto;
+    background-color: white;
+}
+
+.dropdown-item:hover {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+/* .batch-input-class {
+    flex: 0.2
+}
+
+.batch-start {
+    flex: 0.1
+}
+
+.program-select {
+    flex: 0.3;
+}
+
+.code-select {
+    flex: 0.4;
+} */
+
+.table {
+    width: 95%;
+    margin: 20px auto;
+}
+
+.upload-container {
+    border: 3px dotted rgb(63, 213, 213);
+    border-radius: 8px;
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f9ff;
+}
+
+.upload-btn {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+.student-list-table>thead,
+tbody>tr>th,
+td {
+    padding: 15px;
+}
+
+.upload:hover {
+    cursor: pointer;
+}
